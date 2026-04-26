@@ -9,7 +9,7 @@ auto_update = true
 destroy_before_deploy = false
 linked_repo = "app-stacks"
 run_directory = "services/socfortress"
-file_paths = ["services/socfortress/docker-compose.yaml"]
+file_paths = ["docker-compose.yaml"]
 
 environment = """
 SERVER_IP=0.0.0.0
