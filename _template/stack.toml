@@ -1,0 +1,19 @@
+[[stack]]
+name = "PROGRAM_NAME"
+tags = ["tag1", "tag2"]
+
+[stack.config]
+server = "docker01"
+poll_for_updates = true
+auto_update = true
+destroy_before_deploy = false
+linked_repo = "app-stacks"
+run_directory = "services/PROGRAM_NAME"
+file_paths = ["services/PROGRAM_NAME/docker-compose.yaml"]
+config_files = [
+  { path = "services/PROGRAM_NAME/config/file", requires = "Redeploy" },
+  { path = "services/PROGRAM_NAME/config/config_file.toml" },
+]
+environment = """
+TZ=${TZ}
+"""

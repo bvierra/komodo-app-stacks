@@ -1,0 +1,20 @@
+[[stack]]
+name = "proxy-home"
+tags = ["docker", "security", "proxy", "socket"]
+
+[stack.config]
+server = "docker"
+poll_for_updates = true
+auto_update = true
+destroy_before_deploy = false
+linked_repo = "app-stacks"
+file_paths = ["services/docker-proxy/docker-compose.yaml"]
+
+environment = """
+PROXY_INSTANCE=home
+# System configuration
+TZ=[[TZ]]
+
+# Port configuration
+PORT_SOCKY_PROXY=[[PORT_SOCKY_PROXY]]
+"""

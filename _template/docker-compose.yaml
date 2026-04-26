@@ -1,0 +1,15 @@
+name: "PROGRAM_NAME"
+
+services:
+  app:
+    container_name: PROGRAM_NAME
+    logging:
+      driver: ${LOGGING_DRIVER:-local}
+    ports:
+      - ${PORT_HTTP}:3000
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ./config:/app/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
