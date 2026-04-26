@@ -15,3 +15,9 @@ name = "LOGGING_DRIVER"
 description = "Logging driver"
 value = "local"
 is_secret = false
+
+[[variable]]
+name = "PORT_SOCKY_PROXY"
+description = "Socky proxy port"
+value = "12375"
+is_secret = false
