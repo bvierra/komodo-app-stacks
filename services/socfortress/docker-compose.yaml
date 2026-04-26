@@ -40,6 +40,7 @@ services:
       MYSQL_DATABASE: copilot
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    user: "3002:3003"
     ports:
       - "3306:3306"
     volumes:
