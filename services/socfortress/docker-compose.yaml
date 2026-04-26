@@ -10,6 +10,7 @@ services:
       - /mnt/nfs/socfortress/data/copilot-backend-data/logs:/opt/logs
       # Mount the copilot.db file to persist the database
       - /mnt/nfs/socfortress/data/data:/opt/copilot/backend/data
+    user: "3002:3003"
     env_file: .env
     depends_on:
       - copilot-mysql
@@ -19,6 +20,7 @@ services:
     image: ghcr.io/socfortress/copilot-frontend:latest
     environment:
       - SERVER_HOST=${SERVER_HOST:-localhost} # Set the domain name of your server
+    user: "3002:3003"
     ports:
       - "80:80"
       - "443:443"
@@ -52,6 +54,7 @@ services:
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    user: "3002:3003"
     ports:
       - "9000:9000"
     volumes:
@@ -68,6 +71,7 @@ services:
     volumes:
       # Mount the Velociraptor config file from host into container
       - /mnt/nfs/socfortress/data/copilot-mcp/api.config.yaml:/app/velociraptor-config.yaml:ro
+    user: "3002:3003"
     environment:
       # Core OpenAI Configuration
       - OPENAI_API_KEY=${OPENAI_API_KEY}
