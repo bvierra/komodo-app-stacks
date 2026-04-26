@@ -1,0 +1,17 @@
+[[stack]]
+name = "socfortress-greylog"
+tags = ["socfortress", "greylog", "sync"]
+
+[stack.config]
+server = "docker02"
+poll_for_updates = true
+auto_update = true
+destroy_before_deploy = false
+linked_repo = "app-stacks"
+run_directory = "services/socfortress-greylog"
+file_paths = ["docker-compose.yaml"]
+
+environment = """
+GRAYLOG_PASSWORD_SECRET=[[OP__KOMODO__SOCFORTRESS_GREYLOG__GRAYLOG_PASSWORD_SECRET]]
+GRAYLOG_ROOT_PASSWORD_SHA2=[[OP__KOMODO__SOCFORTRESS_GREYLOG__GRAYLOG_ROOT_PASSWORD_SHA2]]
+"""
