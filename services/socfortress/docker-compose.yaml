@@ -56,7 +56,7 @@ services:
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
     user: "3002:3003"
     ports:
-      - "9000:9005"
+      - "9000:9000"
     volumes:
       - /mnt/nfs/socfortress/data/data/minio-data:/data
     command: server /data --console-address ":9001"
