@@ -72,8 +72,8 @@ services:
       - "127.0.0.1:5555:5555/tcp" # RAW TCP
       - "127.0.0.1:5555:5555/udp" # RAW UDP
       - "9000:9000/tcp" # Server API
-      - "127.0.0.1:12201:12201/tcp" # GELF TCP
-      - "127.0.0.1:12202:12202/udp" # GELF UDP
+      - "12201:12201/tcp" # GELF TCP
+      - "12202:12202/udp" # GELF UDP
       #- "127.0.0.1:10000:10000/tcp" # Custom TCP port
       #- "127.0.0.1:10000:10000/udp" # Custom UDP port
       - "127.0.0.1:13301:13301/tcp" # Forwarder data
