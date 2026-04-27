@@ -21,10 +21,14 @@ services:
     environment:
       - SERVER_HOST=${SERVER_HOST:-localhost} # Set the domain name of your server
     user: "3002:3003"
+    volumes:
+      - /mnt/nfs/socfortress/frontend/certs.d:/etc/nginx/certs.d
+      - /mnt/nfs/socfortress/frontend/certs:/etc/nginx/certs
     ports:
       - "80:80"
       - "443:443"
     restart: always
+
 
   # ! Optional Customer Portal Service ! #
   # copilot-customer-portal:
