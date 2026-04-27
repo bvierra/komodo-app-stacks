@@ -66,6 +66,7 @@ services:
       GRAYLOG_HTTP_EXTERNAL_URI: "http://10.10.130.142:9000/"
       GRAYLOG_MONGODB_URI: "mongodb://mongodb:27017/graylog"
     ports:
+      - "12201:12201/tcp"
       - "127.0.0.1:5044:5044/tcp" # Beats
       - "127.0.0.1:5140:5140/udp" # Syslog
       - "127.0.0.1:5140:5140/tcp" # Syslog
